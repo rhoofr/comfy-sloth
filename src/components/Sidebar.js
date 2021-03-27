@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import { useProductsContext } from '../context/products_context';
@@ -9,7 +9,8 @@ import CartButtons from './CartButtons';
 import { useUserContext } from '../context/user_context';
 
 const Sidebar = () => {
-  const isSidebarOpen = false;
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+
   return (
     <SidebarContainer>
       <aside
@@ -17,7 +18,7 @@ const Sidebar = () => {
       >
         <div className='sidebar-header'>
           <img src={logo} className='logo' alt='comfy slith' />
-          <button className='close-btn'>
+          <button className='close-btn' onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -25,12 +26,16 @@ const Sidebar = () => {
           {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
           <li>
-            <Link to='/checkout'>checkout</Link>
+            <Link to='/checkout' onClick={closeSidebar}>
+              checkout
+            </Link>
           </li>
         </ul>
         <CartButtons />

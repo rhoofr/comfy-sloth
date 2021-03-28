@@ -17,7 +17,7 @@ const Hero = () => {
           natus mollitia labore ducimus saepe illum iste consectetur dignissimos
           sunt.
         </p>
-        <Link to='/product' className='btn hero-btn'>
+        <Link to='/products' className='btn hero-btn'>
           shop now
         </Link>
       </article>

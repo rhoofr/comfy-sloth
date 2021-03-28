@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <Wrapper>
       <div className='section-center'>
-        <h3>join our newsletter and get 20% off</h3>
+        <h3>Join our newsletter and get 20% off</h3>
         <div className='content'>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt vel

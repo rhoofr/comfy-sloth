@@ -63,7 +63,6 @@ const filter_reducer = (state, action) => {
 
         default:
           return state;
-          break;
       }
       return {
         ...state,

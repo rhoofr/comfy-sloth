@@ -127,11 +127,7 @@ const CheckoutForm = () => {
         )}
         {/* Show  a success message upon completion */}
         <p className={succeeded ? 'result-message' : 'result-message hidden'}>
-          Payment succeeded, see the result in your
-          <a href={`https://dashboard.stripe.com/test/payments`}>
-            Stripe dashboard.
-          </a>
-          Refresh the page to pay again
+          <strong>Payment succeeded</strong>
         </p>
       </form>
     </div>
@@ -170,6 +166,7 @@ const Wrapper = styled.section`
     box-sizing: border-box;
   }
   .result-message {
+    margin: 1rem 0 0 0;
     line-height: 22px;
     font-size: 16px;
   }

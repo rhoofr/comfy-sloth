@@ -16,7 +16,7 @@ import { formatPrice } from '../utils/helpers';
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
-  const { cart, totalAmount, shippingFee, clearCart } = useCartContext();
+  const { totalAmount, shippingFee, clearCart } = useCartContext();
   const { myUser } = useUserContext();
   const history = useHistory();
   // STRIPE STUFF
@@ -50,7 +50,7 @@ const CheckoutForm = () => {
     try {
       const { data } = await axios.post(
         '/.netlify/functions/create-payment-intent',
-        JSON.stringify({ cart, shippingFee, totalAmount })
+        JSON.stringify({ shippingFee, totalAmount })
       );
 
       setClientSecret(data.clientSecret);
